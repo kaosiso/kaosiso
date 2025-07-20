@@ -10,7 +10,7 @@ import kaosiso from "../assets/kaosiso.jpg";
 import TopLeftBox from "../components/TopLeftBox";
 import TopRightBox from "../components/TopRightBox";
 import BottomLeftBox from "../components/bottomLeftBox";
-import BottomRightBox from "../components/BottomRightBox";
+import BottomRightBox from "../components/bottomRightBox";
 
 const ImageCarousel = () => {
   const images = [kaosiso, image2];
