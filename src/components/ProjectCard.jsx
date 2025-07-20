@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const useTypewriter = (text, speed = 50, active) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -24,6 +25,8 @@ const useTypewriter = (text, speed = 50, active) => {
 
 const ProjectCard = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
+  // Detect if device is phone (below 640px)
+  const isPhone = useMediaQuery({ maxWidth: 639 });
 
   // Typing effect only active on description when hovered
   const typedDescription = useTypewriter(
@@ -32,12 +35,17 @@ const ProjectCard = ({ project }) => {
     isHovered
   );
 
+  // Shared styles, adjusted by screen size:
+  const baseClass =
+    "relative rounded-lg overflow-hidden shadow-md border border-gray-300 bg-transparent cursor-pointer";
+  const phoneViewClass = "max-w-sm min-h-[300px]";
+  const laptopViewClass = "max-w-md min-h-[300px]";
+
   return (
     <div
-      className="relative max-w-sm rounded-lg overflow-hidden shadow-md border border-gray-300 bg-transparent cursor-pointer"
+      className={`${baseClass} ${isPhone ? phoneViewClass : laptopViewClass}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ minHeight: "300px" }}
     >
       {/* Show "Show Details" normally when NOT hovered (no typing animation) */}
       {!isHovered && (
@@ -85,7 +93,7 @@ const ProjectCard = ({ project }) => {
                   rel="noopener noreferrer"
                   className="text-gray-800 text-sm bg-gray-300 px-2 py-1 border border-black rounded-2xl hover:bg-gray-800 hover:text-gray-200"
                 >
-                   Demo
+                  Demo
                 </a>
               )}
             </div>

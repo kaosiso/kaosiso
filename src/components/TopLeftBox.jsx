@@ -37,9 +37,9 @@ const TopLeftBox = ({ mouseOffset, navigate }) => {
         <img
           src={kaosiso}
           alt="Kaosiso"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAFA] via-[#b9bbc0] to-[#5f646d] opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#FAFAFA] via-[#b9bbc0] to-[#5f646d] " />
       </div>
 
       {/* Scrolling AboutText content */}

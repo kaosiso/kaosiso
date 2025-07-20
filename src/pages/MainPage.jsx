@@ -9,7 +9,7 @@ import kaosiso from "../assets/kaosiso.jpg";
 // Boxes
 import TopLeftBox from "../components/TopLeftBox";
 import TopRightBox from "../components/TopRightBox";
-import BottomLeftBox from "../components/BottomLeftBox";
+import BottomLeftBox from "../components/bottomLeftBox";
 import BottomRightBox from "../components/BottomRightBox";
 
 const ImageCarousel = () => {
@@ -59,14 +59,17 @@ const MainPage = () => {
 
   return (
     <div className="font-sans scrollbar-none min-h-screen w-full overflow-hidden relative mt-5">
-      {/* Mobile Image Carousel */}
+      {/* Mobile & iPad Image Carousel */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="block sm:hidden w-full h-[420px] px-4 pt-4  pb-1 z-30 relative"
+        className=" lg:hidden px-4 pt-4 pb-1 z-30 relative flex justify-center"
       >
-        <ImageCarousel />
+        <div className="w-full h-[420px] sm:w-[90%] md:w-[70%] md:h-[500px] rounded-xl overflow-hidden">
+          <ImageCarousel />
+        </div>
       </motion.div>
 
       {/* Desktop Floating Image Carousel */}
@@ -74,7 +77,7 @@ const MainPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
-        className="hidden sm:flex absolute inset-0 justify-center items-center z-10 pointer-events-none"
+        className="hidden lg:flex absolute inset-0 justify-center items-center z-10 pointer-events-none"
       >
         <div className="w-[60vw] h-[60vh] max-w-[400px]">
           <ImageCarousel />
@@ -95,7 +98,8 @@ const MainPage = () => {
           <BottomRightBox mouseOffset={mouseOffset} navigate={navigate} />
         </motion.div>
       )}
-      {/* Large Scrolling "Full Stack Developer" Banner */}
+
+      {/* Scrolling "Full Stack Developer" Banner */}
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: "-100%" }}
@@ -104,13 +108,12 @@ const MainPage = () => {
           duration: 30,
           ease: "linear",
         }}
-        className="absolute bottom-0 w-full z-40 bg-transparent py-10"
+        className="w-full bg-transparent py-8 mt-4"
       >
         <p className="text-5xl sm:text-6xl font-extrabold text-gray-700 text-center tracking-wider whitespace-nowrap uppercase">
           Full Stack Developer •
         </p>
       </motion.div>
-      
     </div>
   );
 };

@@ -17,7 +17,7 @@ const TopRightBox = ({ mouseOffset }) => {
         <img
           src={skill}
           alt="Skills background"
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover "
         />
         <div className="absolute inset-0 bg-transparent opacity-60" />
       </div>

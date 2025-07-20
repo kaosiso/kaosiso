@@ -35,8 +35,8 @@ const BottomLeftBox = ({ mouseOffset, navigate }) => {
       <div className="boxtitle absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 px-3 py-1 rounded-md">
         <motion.span
           className="text-black text-sm sm:text-base font-medium"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 0 }}
+          animate={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Projects
