@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manufacturing+Consent&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @import "tailwindcss";
@@ -7,9 +6,8 @@
 body {
   background: linear-gradient(to top right, #070d1d, #000000, #000000);
   font-family: 'Inter', sans-serif;
-
 }
-/* in index.css or global.css */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -21,6 +19,7 @@ html, body {
 .font {
   font-family: 'Great Vibes';
 }
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-none::-webkit-scrollbar {
   display: none;
@@ -28,11 +27,9 @@ html, body {
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-none {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
-
 
 /* styles.css or global.css */
 .no-scrollbar::-webkit-scrollbar {
@@ -43,12 +40,11 @@ html, body {
   scrollbar-width: none;
 }
 
-
 .click-circle {
   position: fixed;
   width: 20px;
   height: 20px;
-  background-color: rgba(96, 97, 97, 0.6); /* light blue */
+  background-color: rgba(96, 97, 97, 0.6);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
@@ -75,21 +71,17 @@ html, body {
 
 /* Customize NProgress bar */
 #nprogress .bar {
-  background: #ebebed !important; /* Change this to your desired color */
+  background: #ebebed !important;
 }
 
 #nprogress .peg {
   box-shadow: 0 0 10px #595a6d, 0 0 5px #2d2d39 !important;
 }
 
-/* Optional: change spinner color if enabled */
 #nprogress .spinner-icon {
   border-top-color: #6366f1;
   border-left-color: #6366f1;
 }
-
-
-/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); */
 
 @keyframes fadeOutSlow {
   0% {

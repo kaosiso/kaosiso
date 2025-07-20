@@ -27,7 +27,7 @@ const ImageCarousel = () => {
     <img
       key={index}
       src={images[index]}
-      className="w-full h-full shadow-2xl bg-transparent rounded-xl object-cover"
+      className="w-full h-full object-cover shadow-2xl bg-transparent rounded-xl"
       alt="carousel"
     />
   );
@@ -38,7 +38,6 @@ const MainPage = () => {
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
   const [showBoxes, setShowBoxes] = useState(false);
 
-  // Track mouse movement
   useEffect(() => {
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 40;
@@ -49,7 +48,6 @@ const MainPage = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  // Show boxes after 10 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBoxes(true);
@@ -58,28 +56,27 @@ const MainPage = () => {
   }, []);
 
   return (
-    <div className="font-sans scrollbar-none min-h-screen w-full overflow-hidden relative mt-5">
-      {/* Mobile & iPad Image Carousel */}
-
+    <div className="font-sans scrollbar-none min-h-screen w-full overflow-hidden relative flex flex-col justify-between">
+      {/* Image Carousel for mobile & tablet */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className=" lg:hidden px-4 pt-4 pb-1 z-30 relative flex justify-center"
+        className="lg:hidden px-4 pt-4 pb-1 z-30 relative flex justify-center"
       >
         <div className="w-full h-[420px] sm:w-[90%] md:w-[70%] md:h-[500px] rounded-xl overflow-hidden">
           <ImageCarousel />
         </div>
       </motion.div>
 
-      {/* Desktop Floating Image Carousel */}
+      {/* Image Carousel for Desktop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
         className="hidden lg:flex absolute inset-0 justify-center items-center z-10 pointer-events-none"
       >
-        <div className="w-[60vw] h-[60vh] max-w-[400px]">
+        <div className="w-[60vw] h-[60vh] max-w-[450px] min-w-[300px]">
           <ImageCarousel />
         </div>
       </motion.div>
@@ -99,7 +96,7 @@ const MainPage = () => {
         </motion.div>
       )}
 
-      {/* Scrolling "Full Stack Developer" Banner */}
+      {/* Scrolling Full Stack Developer Banner */}
       <motion.div
         initial={{ x: "100%" }}
         animate={{ x: "-100%" }}
@@ -108,7 +105,7 @@ const MainPage = () => {
           duration: 30,
           ease: "linear",
         }}
-        className="w-full bg-transparent py-8 mt-4"
+        className="w-full py-8 bg-transparent z-40 relative"
       >
         <p className="text-5xl sm:text-6xl font-extrabold text-gray-700 text-center tracking-wider whitespace-nowrap uppercase">
           Full Stack Developer •
