@@ -79,8 +79,8 @@ html, body {
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #6366f1;
-  border-left-color: #6366f1;
+  border-top-color: #dadadc;
+  border-left-color: #949498;
 }
 
 @keyframes fadeOutSlow {

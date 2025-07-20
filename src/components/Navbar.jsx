@@ -56,7 +56,7 @@ const Navbar = () => {
 
       {/* Fullscreen Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 bg-[#111827]/95 z-40 flex flex-col items-center justify-center gap-6 sm:hidden">
+        <div className="fixed inset-0 bg-gray-400/95 z-40 flex flex-col items-center justify-center gap-6 sm:hidden">
           {navItems.map((label) => (
             <button
               key={label}
